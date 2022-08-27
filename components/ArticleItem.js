@@ -4,8 +4,14 @@ import styles from '../styles/Article.module.css'
 
 function ArticleItem({article}) {
   return (
-    <link href='/'>ArticleItem</link>
-  )
+    <Link href={`/article/${article.id}`}>
+       <a className={styles.card}>
+        <h3>{article.title} &rarr;</h3>
+        <p>{article.body}</p>
+       </a>
+    </Link>
+    
+    )
 }
 
 export default ArticleItem
