@@ -1,31 +1,18 @@
 import Head from "next/head";
-import ArticleList from "../components/ArticleList";
-
-export default function Home({ articles }) {
-  // console.log(articles);
+import Link from "next/link";
+import Navbar from "../components/Navbar";
+import styles from "../styles/Home.module.css"
+export default function Home() {
+  
   return (
     <div>
       <Head>
-        <title>Joseph website</title>
-        <meta name="keyboards" content="wed dev newa" />
+        <title>Joseph Next tutorial</title>
       </Head>
-
-      <ArticleList articles={articles}/>
-
+   
      
     </div>
   );
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=6"
-  );
-  const articles = await res.json();
 
-  return {
-    props: {
-      articles,
-    },
-  };
-};
